@@ -114,7 +114,7 @@ function Page() {
                   Projects Coming Soon
                 </h2>
                 <p className={`${openSans.className} text-black/60 text-base md:text-lg max-w-md mx-auto`}>
-                  We're preparing exciting projects for you. <br className="hidden md:block"/>
+                  We&apos;re preparing exciting projects for you. <br className="hidden md:block"/>
                   Check back soon to start contributing!
                 </p>
               </div>
