@@ -107,13 +107,13 @@ function Projects(props: Props) {
                 CONTRIBUTE MORE <br /> SHINE ON THE LEADERBOARD <br /> WIN
                 <span className="text-[#b7b7b7] mb-8"> PRIZES AND CERTIFICATES</span>
               </p>
-              <Link href="/">
+              <Link href="/projects">
                 <div
                   ref={talkRef}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   className={`talking px-8 py-4 text-base rounded-full text-white bg-black hover:bg-[#B2D12E] text-center ${openSans.className} hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out flex justify-center items-center gap-2`}>
-                  View Structure
+                  View Projects
                   <Image
                     src={
                       isHovering
@@ -162,13 +162,13 @@ function Projects(props: Props) {
               <span className="font-bold">DESIGNING</span> AND CONVERTING THEM
               TO A <span className="font-bold">DEPLOYED WEBSITE</span>.
             </div> */}
-            <Link href="/">
+            <Link href="/projects">
               <div
                 ref={talkRef}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className={`talking px-5 py-2 text-sm rounded-full text-white bg-black hover:bg-[#B2D12E] text-center ${openSans.className} hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out flex justify-center items-center gap-2`}>
-                View Structure
+                View Projects
                 <Image
                   src={
                     isHovering

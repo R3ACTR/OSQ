@@ -58,13 +58,14 @@ function Comp({ homeRef, aboutRef, workRef, onItemClick, isMobile }: any) {
         ABOUT
       </button>
 
-      <button
-        onClick={() => scrollTo(workRef)}
-        style={{ cursor: 'url("/icons/cursor.png"), auto' }}
-        className={btn}
-      >
-        WORK
-      </button>
+      <Link href="/projects" onClick={onItemClick}>
+        <button
+          style={{ cursor: 'url("/icons/cursor.png"), auto' }}
+          className={btn}
+        >
+          PROJECTS
+        </button>
+      </Link>
 
       <Link href="/leaderboard" onClick={onItemClick}>
         <button
