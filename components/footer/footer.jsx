@@ -27,7 +27,7 @@ function Footer() {
       className="footer bg-black flex flex-col justify-start items-center pt-12 px-5 h-[500px] overflow-hidden"
     >
       <div className="container flex flex-col items-center sm:flex-row md:mb-0 mb-16">
-        <Image src="/curves.png" alt="logo" width={50} height={50} />
+        <Image src="/PENLAP.png" alt="logo" width={50} height={50} />
         <p className="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
           &copy;All rights reserved @ R3ACTR
         </p>
