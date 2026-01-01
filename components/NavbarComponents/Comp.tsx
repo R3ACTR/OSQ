@@ -28,9 +28,9 @@ function Comp({ homeRef, aboutRef, workRef, onItemClick, isMobile }: any) {
   };
 
   const btn = isMobile
-    ? "px-6 py-6 text-5xl leading-none rounded-full " +
+    ? "px-6 py-6 text-4xl leading-none rounded-full " +
       "text-[#b2de21] bg-black hover:scale-105 hover:bg-[#b2de21] " +
-      "hover:text-black active:scale-95 transition-all duration-300 font-black w-[60vw] tracking-tighter shadow-2xl"
+      "hover:text-black active:scale-95 transition-all duration-300 font-black w-[75vw] tracking-normal shadow-2xl"
     : "px-4 py-2 md:px-6 md:py-2 text-sm md:text-base rounded-full " +
       "text-[#b2de21] bg-black hover:scale-[102%] hover:bg-[#b2de21] " +
       "hover:text-black active:scale-95 transition-all duration-300";
@@ -66,12 +66,12 @@ function Comp({ homeRef, aboutRef, workRef, onItemClick, isMobile }: any) {
         WORK
       </button>
 
-      <Link href="/contact" onClick={onItemClick}>
+      <Link href="/leaderboard" onClick={onItemClick}>
         <button
           style={{ cursor: 'url("/icons/cursor.png"), auto' }}
           className={btn}
         >
-          CONTACT
+          LEADERBOARD
         </button>
       </Link>
     </div>

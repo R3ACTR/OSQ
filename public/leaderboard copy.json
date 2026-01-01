@@ -1,0 +1,74 @@
+{
+  "leaderboard": [
+    {
+      "rank": 1,
+      "name": "Sreehari",
+      "score": 9850,
+      "avatar": "🥷",
+      "contributions": 142
+    },
+    {
+      "rank": 2,
+      "name": "CodeMaster",
+      "score": 9500,
+      "avatar": "💻",
+      "contributions": 128
+    },
+    {
+      "rank": 3,
+      "name": "PixelArtist",
+      "score": 9200,
+      "avatar": "🎨",
+      "contributions": 115
+    },
+    {
+      "rank": 4,
+      "name": "BugHunter",
+      "score": 8900,
+      "avatar": "🐛",
+      "contributions": 98
+    },
+    {
+      "rank": 5,
+      "name": "DataWizard",
+      "score": 8600,
+      "avatar": "🧙‍♂️",
+      "contributions": 87
+    },
+    {
+      "rank": 6,
+      "name": "AlgoQueen",
+      "score": 8300,
+      "avatar": "👸",
+      "contributions": 76
+    },
+    {
+      "rank": 7,
+      "name": "SystemArch",
+      "score": 8000,
+      "avatar": "🏗️",
+      "contributions": 65
+    },
+    {
+      "rank": 8,
+      "name": "NetRunner",
+      "score": 7800,
+      "avatar": "🏃",
+      "contributions": 54
+    },
+    {
+      "rank": 9,
+      "name": "ByteKing",
+      "score": 7500,
+      "avatar": "👑",
+      "contributions": 43
+    },
+    {
+      "rank": 10,
+      "name": "ZeroCool",
+      "score": 7200,
+      "avatar": "❄️",
+      "contributions": 32
+    }
+  ]
+}
