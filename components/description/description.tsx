@@ -45,22 +45,22 @@ function Description(props: Props) {
         <ul
           className={`md:text-base text-[10px] ${openSans.className} font-semibold flex justify-start items-center gap-2 md:mb-0 mb-5`}
         >
-          <div className="md:h-5 md:w-5 h-3 w-3 rounded-full bg-[#B2D12E]"></div> WELCOME TO THE WORLD OF OPEN SOURCE
+          {/* <div className="md:h-5 md:w-5 h-3 w-3 rounded-full bg-[#B2D12E]"></div>  */}
         </ul>
         <div className="flex flex-col justify-start items-start text-left">
           <p
             className={`font-medium text-4xl ${anton.className} md:leading-snug leading-[1.2] mb-5`}
           >
-            MISSION TOWARDS PROMISING FUTURE <br /> WORK ON REAL WORLD IMPACT PROJECTS
+            OpenSource Quest is not a hackathon. It is a real build program. <br /> The focus is on learning by doing—writing meaningful code, improving documentation, reviewing pull requests, and understanding how modern software is built collaboratively.No prior open-source experience is required. The program encourages participation from students of all technical backgrounds, making open source accessible and approachable for everyone.
           </p>
-          <Link href="/contact">
+          <Link href="/">
             <div
               ref={talkRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className={`talking md:px-8 px-5 md:py-4 py-2 md:text-base text-sm rounded-full text-white bg-black hover:bg-[#B2D12E] text-center ${openSans.className} hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out flex justify-center items-center gap-2`}
             >
-              REGESTER NOW
+              View Brochure
               <Image
                 src={
                   isHovering
