@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import Comp, { openSans } from "../NavbarComponents/comp";
-import { IconBrandLinkedin, IconBrandInstagram } from "@tabler/icons-react";
+import Comp, { openSans } from "../NavbarComponents/Comp";
+import { IconBrandLinkedin, IconBrandGithub } from "@tabler/icons-react";
 import gsap from "gsap";
 
 function Navbar({homeRef, aboutRef, workRef}: any) {
@@ -91,11 +91,11 @@ function Navbar({homeRef, aboutRef, workRef}: any) {
 
         {/* Desktop Social Icons */}
         <div className="hidden md:flex gap-4 items-center md:justify-self-end">
-          <a href="#" className="text-black hover:text-[#b2de21] transition-colors duration-300">
+          <a href="https://www.linkedin.com/company/r3actr-innovations" target="_blank" rel="noopener noreferrer" className="text-black hover:text-[#b2de21] transition-colors duration-300">
             <IconBrandLinkedin size={32} stroke={1.5} />
           </a>
-          <a href="#" className="text-black hover:text-[#b2de21] transition-colors duration-300">
-            <IconBrandInstagram size={32} stroke={1.5} />
+          <a href="https://github.com/R3ACTR" target="_blank" rel="noopener noreferrer" className="text-black hover:text-[#b2de21] transition-colors duration-300">
+            <IconBrandGithub size={32} stroke={1.5} />
           </a>
         </div>
       </nav>
