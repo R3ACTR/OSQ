@@ -65,8 +65,8 @@ function Effect(props: Props) {
     return (
         <div className='h-screen w-screen bg-black flex justify-center items-center'>
             <div className='w-fit px-5 pt-8 overflow-hidden flex justify-center items-center gap-2'>
-                <h1 className={`firstName text-xl text-white font-extrabold ${roboto.className}`}>Creating</h1>
-                <h1 className={`lastName text-xl text-white font-extrabold ${roboto.className}`}>Wonders</h1>
+                <h1 className={`firstName text-xl text-white font-extrabold ${roboto.className}`}>OSQ</h1>
+                <h1 className={`lastName text-xl text-white font-extrabold ${roboto.className}`}>ONBOARD</h1>
             </div>
         </div>
     );
