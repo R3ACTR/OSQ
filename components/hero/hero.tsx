@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Anton, Open_Sans } from 'next/font/google';
 
+import LeaderboardBookmark from '../leaderboard/LeaderboardBookmark';
+import SponsorsBookmark from '../sponsors/SponsorsBookmark';
+
 export const anton = Anton({
   weight: ['400'],
   style: ['normal'],
@@ -149,6 +152,9 @@ function Hero(props: Props) {
         </p>
         <div className="base md:h-[2px] h-[1px] bg-black"></div>
       </div> */}
+
+      <LeaderboardBookmark />
+      <SponsorsBookmark />
     </section>
   );
 }
