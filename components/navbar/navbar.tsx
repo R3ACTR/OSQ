@@ -102,7 +102,7 @@ function Navbar({homeRef, aboutRef, workRef}: any) {
 
       {/* Mobile Fullscreen Menu */}
       <div
-        className={`fixed inset-0 bg-white z-[9999] flex items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 w-screen h-screen bg-black z-[9999] overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
           isClicked 
             ? "opacity-100 translate-y-0" 
             : "opacity-0 -translate-y-full pointer-events-none"
@@ -111,7 +111,7 @@ function Navbar({homeRef, aboutRef, workRef}: any) {
         {/* Close button */}
         <button
           onClick={toggleMenu}
-          className="absolute top-6 right-6 text-black p-2"
+          className="absolute top-6 right-6 text-[#b2de21] p-2 hover:scale-110 transition-transform z-10"
           aria-label="Close menu"
         >
           <svg 
@@ -129,14 +129,16 @@ function Navbar({homeRef, aboutRef, workRef}: any) {
           </svg>
         </button>
 
-        {/* Mobile Menu Items */}
-        <Comp 
-          homeRef={homeRef} 
-          aboutRef={aboutRef} 
-          workRef={workRef} 
-          onItemClick={toggleMenu}
-          isMobile={true}
-        />
+        {/* Mobile Menu Items - Centered Container */}
+        <div className="h-full w-full flex items-center justify-center">
+          <Comp 
+            homeRef={homeRef} 
+            aboutRef={aboutRef} 
+            workRef={workRef} 
+            onItemClick={toggleMenu}
+            isMobile={true}
+          />
+        </div>
       </div>
     </>
   );
