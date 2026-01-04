@@ -42,21 +42,43 @@ function Comp({ homeRef, aboutRef, workRef, onItemClick, isMobile }: any) {
       items-center justify-center
       ${isMobile ? 'gap-10' : 'gap-8 md:gap-16'}`}
     >
-      <button
-        onClick={() => scrollTo(homeRef)}
-        style={{ cursor: 'url("/icons/cursor.png"), auto' }}
-        className={btn}
-      >
-        HOME
-      </button>
+      {homeRef ? (
+        <button
+          onClick={() => scrollTo(homeRef)}
+          style={{ cursor: 'url("/icons/cursor.png"), auto' }}
+          className={btn}
+        >
+          HOME
+        </button>
+      ) : (
+        <Link href="/" onClick={onItemClick}>
+          <button
+            style={{ cursor: 'url("/icons/cursor.png"), auto' }}
+            className={btn}
+          >
+            HOME
+          </button>
+        </Link>
+      )}
 
-      <button
-        onClick={() => scrollTo(aboutRef)}
-        style={{ cursor: 'url("/icons/cursor.png"), auto' }}
-        className={btn}
-      >
-        ABOUT
-      </button>
+      {aboutRef ? (
+        <button
+          onClick={() => scrollTo(aboutRef)}
+          style={{ cursor: 'url("/icons/cursor.png"), auto' }}
+          className={btn}
+        >
+          ABOUT
+        </button>
+      ) : (
+        <Link href="/" onClick={onItemClick}>
+          <button
+            style={{ cursor: 'url("/icons/cursor.png"), auto' }}
+            className={btn}
+          >
+            ABOUT
+          </button>
+        </Link>
+      )}
 
       <Link href="/projects" onClick={onItemClick}>
         <button

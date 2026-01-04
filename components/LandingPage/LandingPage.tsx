@@ -93,20 +93,33 @@ function LandingPage(props: any) {
     gsap.ticker.add(ticker);
     gsap.ticker.lagSmoothing(0);
 
-    const welcomeAnimation = gsap.timeline();
-    welcomeAnimation
-      .fromTo(
-        "#welcome",
-        { y: 0 },
-        { y: -2000, duration: 1.5, delay: 3, ease: "power4.in" }
-      )
-      .set("#welcome", { display: "none" })
-      .set("#content", { opacity: 0, display: "block" })
-      .to("#content", {
-        opacity: 1,
-        duration: 1,
-        onComplete: () => setIsWelcomeAnimationComplete(true),
-      });
+    // Check if welcome animation has been shown in this session
+    const hasSeenWelcome = sessionStorage.getItem("welcomeShown");
+
+    if (hasSeenWelcome) {
+      setIsWelcomeAnimationComplete(true);
+      // Ensure GSAP doesn't override the state-based styles
+      gsap.set("#welcome", { display: "none" });
+      gsap.set("#content", { opacity: 1, display: "block" });
+    } else {
+      const welcomeAnimation = gsap.timeline();
+      welcomeAnimation
+        .fromTo(
+          "#welcome",
+          { y: 0 },
+          { y: -2000, duration: 1.5, delay: 3, ease: "power4.in" }
+        )
+        .set("#welcome", { display: "none" })
+        .set("#content", { opacity: 0, display: "block" })
+        .to("#content", {
+          opacity: 1,
+          duration: 1,
+          onComplete: () => {
+            setIsWelcomeAnimationComplete(true);
+            sessionStorage.setItem("welcomeShown", "true");
+          },
+        });
+    }
 
     return () => {
       gsap.ticker.remove(ticker);
