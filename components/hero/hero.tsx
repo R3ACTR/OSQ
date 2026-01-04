@@ -115,9 +115,9 @@ function Hero(props: Props) {
          </Link>
       </div>
       
-      <div className="flex flex-col items-center mt-16 gap-6 partners-section opacity-0">
-         <p className={`text-gray-500 font-semibold tracking-widest ${openSans.className} text-sm`}>In Association With</p>
-         <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+      <div className="flex flex-col items-center mt-16 gap-4 md:gap-6 partners-section opacity-0">
+         <p className={`text-gray-500 font-semibold tracking-widest ${openSans.className} text-xs md:text-sm`}>In Association With</p>
+         <div className="flex flex-nowrap justify-center gap-2 md:gap-16 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500 w-full overflow-x-auto px-2">
             {/* Sponsor Logos */}
             {[
               "/partners/ieee.png",
@@ -126,7 +126,7 @@ function Hero(props: Props) {
               "/partners/cse.png",
               "/partners/IEDC Logo-Photoroom.png"
             ].map((logo, i) => (
-              <div key={i} className="h-16 w-32 flex items-center justify-center">
+              <div key={i} className="h-10 w-16 md:h-16 md:w-32 flex items-center justify-center flex-shrink-0">
                 <Image 
                   src={logo} 
                   width={150} 
