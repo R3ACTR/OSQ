@@ -87,11 +87,12 @@ export default function Home() {
             {/* Action Buttons */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
               <div className="hero-btn">
-                <button 
-                  className="px-12 py-4 bg-black text-white rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
+                <Link 
+                  href="/register"
+                  className="inline-block px-12 py-4 bg-black text-white rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
                 >
                   REGISTER
-                </button>
+                </Link>
               </div>
 
               <div className="hero-btn">
@@ -109,22 +110,34 @@ export default function Home() {
               <span className="font-[family-name:var(--font-passero)] text-zinc-500 tracking-[0.3em] text-sm">PARTNERS</span>
               <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
                  {[
-                   { src: "/partners/sbce.png", alt: "SBCE", width: 80 },
-                   { src: "/partners/ieee.png", alt: "IEEE", width: 100 },
+                   { src: "/partners/sbce.png", alt: "SBCE", width: 80, href: "/sbce" },
+                   { src: "/partners/ieee.png", alt: "IEEE", width: 100, href: "/ieee" },
                    { src: "/partners/IEDC Logo-Photoroom.png", alt: "IEDC", width: 100 },
                    { src: "/partners/cse.png", alt: "CSE", width: 60 },
                    { src: "/partners/ai.png", alt: "AI", width: 60 },
-                 ].map((partner) => (
-                   <div key={partner.alt} className="relative h-10 w-auto flex items-center justify-center transition-transform hover:scale-110 duration-300">
-                     <Image 
-                       src={partner.src} 
-                       alt={partner.alt} 
-                       width={partner.width} 
-                       height={40} 
-                       className="object-contain h-full w-auto"
-                     />
-                   </div>
-                 ))}
+                 ].map((partner) => {
+                   const content = (
+                     <div className="relative h-10 w-auto flex items-center justify-center transition-transform hover:scale-110 duration-300">
+                       <Image 
+                         src={partner.src} 
+                         alt={partner.alt} 
+                         width={partner.width} 
+                         height={40} 
+                         className="object-contain h-full w-auto"
+                       />
+                     </div>
+                   );
+
+                   if (partner.href) {
+                     return (
+                       <Link key={partner.alt} href={partner.href}>
+                         {content}
+                       </Link>
+                     );
+                   }
+
+                   return <div key={partner.alt}>{content}</div>;
+                 })}
               </div>
             </div>
         </div>
