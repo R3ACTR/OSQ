@@ -103,20 +103,15 @@ export default function IEEEPage() {
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            
-            {/* Mission Section */}
-            <div className="mission-section bg-white p-8 md:p-12 rounded-[2.5rem] border border-zinc-200 shadow-xl relative overflow-hidden group hover:border-[#00629B] transition-colors duration-500">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00629B]/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700 pointer-events-none" />
+            {/* Mission Section - Redesigned */}
+            <div className="mission-section flex flex-col md:flex-row gap-8 md:gap-16 items-start border-b border-zinc-200 pb-16">
+               <div className="flex-shrink-0 w-24 h-24 bg-[#00629B]/10 rounded-3xl flex items-center justify-center text-[#00629B]">
+                  <Target size={48} />
+               </div>
                
-               <div className="relative z-10">
-                 <div className="w-16 h-16 bg-[#00629B]/10 rounded-2xl flex items-center justify-center text-[#00629B] mb-8">
-                    <Target size={32} />
-                 </div>
-                 
-                 <h2 className="text-4xl font-[family-name:var(--font-passero)] mb-6 text-black">OUR MISSION</h2>
-                 
-                 <div className="space-y-6 text-zinc-800 text-lg leading-relaxed">
+               <div className="space-y-6">
+                 <h2 className="text-5xl font-[family-name:var(--font-passero)] text-black">OUR MISSION</h2>
+                 <div className="space-y-6 text-zinc-800 text-lg leading-relaxed max-w-2xl">
                    <p>
                      We bring together students from diverse engineering and technology disciplines who share a common interest in exploring emerging technologies, strengthening technical skills, and developing solutions that create real-world impact.
                    </p>
@@ -127,18 +122,15 @@ export default function IEEEPage() {
                </div>
             </div>
 
-            {/* Vision Section */}
-            <div className="vision-section bg-black text-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden group hover:shadow-[#00629B]/20 transition-all duration-500">
-               <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-tr from-[#00629B]/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            {/* Vision Section - Redesigned */}
+            <div className="vision-section flex flex-col md:flex-row gap-8 md:gap-16 items-start pt-8">
+               <div className="flex-shrink-0 w-24 h-24 bg-black/5 rounded-3xl flex items-center justify-center text-black">
+                  <Lightbulb size={48} />
+               </div>
                
-               <div className="relative z-10">
-                 <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-8 border border-white/20">
-                    <Lightbulb size={32} />
-                 </div>
-                 
-                 <h2 className="text-4xl font-[family-name:var(--font-passero)] mb-6 text-white">OUR VISION</h2>
-                 
-                 <div className="space-y-6 text-zinc-200 text-lg leading-relaxed">
+               <div className="space-y-6">
+                 <h2 className="text-5xl font-[family-name:var(--font-passero)] text-black">OUR VISION</h2>
+                 <div className="space-y-6 text-zinc-800 text-lg leading-relaxed max-w-2xl">
                    <p>
                      Our vision is to inspire and empower students to excel in the fields of engineering, technology, and science while contributing meaningfully to society through innovative, ethical, and sustainable solutions.
                    </p>
@@ -151,8 +143,6 @@ export default function IEEEPage() {
                  </div>
                </div>
             </div>
-
-          </div>
 
            {/* Stats / Extras Row */}
            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">

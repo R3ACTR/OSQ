@@ -150,45 +150,47 @@ export default function SBCEPage() {
           </div>
 
           {/* Cards Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32">
+          {/* Stats / Info Section - Redesigned */}
+          <div className="mt-24 space-y-16">
             
-            {/* Vision Card */}
-            <div className="vision-card bg-black text-white p-10 rounded-[2rem] relative overflow-hidden group border border-zinc-800 hover:border-[#bfff00] transition-colors duration-300">
-              <div className="relative z-10 space-y-6">
-                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-[#bfff00] mb-8 group-hover:bg-[#bfff00] group-hover:text-black transition-colors duration-300">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Vision Section */}
+            <div className="vision-card flex flex-col md:flex-row gap-8 md:gap-16 items-start border-b border-zinc-200 pb-16">
+              <div className="flex-shrink-0 w-24 h-24 bg-black text-[#bfff00] rounded-3xl flex items-center justify-center">
+                 <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                </div>
-                <h2 className="text-4xl font-[family-name:var(--font-passero)] tracking-wider text-white">OUR VISION</h2>
-                <p className="text-zinc-300 text-lg leading-relaxed">
+              </div>
+              
+              <div className="space-y-6">
+                <h2 className="text-5xl font-[family-name:var(--font-passero)] text-black">OUR VISION</h2>
+                <p className="text-zinc-800 text-xl leading-relaxed max-w-2xl">
                   To create professionally competent engineers with human values and social commitment.
                 </p>
               </div>
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#bfff00]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             </div>
 
-            {/* Mission Card */}
-            <div className="mission-card bg-[#f4f4f5] p-10 rounded-[2rem] relative overflow-hidden group border border-zinc-200 hover:border-black transition-colors duration-300">
-              <div className="relative z-10 space-y-6">
-                 <div className="w-16 h-16 bg-black/5 rounded-2xl flex items-center justify-center text-black mb-8 group-hover:bg-black group-hover:text-[#bfff00] transition-colors duration-300">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Mission Section */}
+            <div className="mission-card flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+               <div className="flex-shrink-0 w-24 h-24 bg-zinc-100 text-black rounded-3xl flex items-center justify-center">
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                </div>
-                <h2 className="text-4xl font-[family-name:var(--font-passero)] tracking-wider text-black">OUR MISSION</h2>
-                <ul className="space-y-4 text-zinc-800 text-lg leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
+               </div>
+               
+               <div className="space-y-6">
+                <h2 className="text-5xl font-[family-name:var(--font-passero)] text-black">OUR MISSION</h2>
+                <ul className="space-y-4 text-zinc-800 text-lg leading-relaxed max-w-2xl">
+                  <li className="flex items-start gap-4">
+                    <span className="mt-2.5 w-2 h-2 rounded-full bg-black flex-shrink-0" />
                     <span>Offer well balanced curriculum with student-centric approach.</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
+                  <li className="flex items-start gap-4">
+                    <span className="mt-2.5 w-2 h-2 rounded-full bg-black flex-shrink-0" />
                     <span>Encourage students to participate in innovation, lifelong learning and research.</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
+                  <li className="flex items-start gap-4">
+                    <span className="mt-2.5 w-2 h-2 rounded-full bg-black flex-shrink-0" />
                     <span>Impart ethical and human values focusing on rural needs and sustainability.</span>
                   </li>
                 </ul>
