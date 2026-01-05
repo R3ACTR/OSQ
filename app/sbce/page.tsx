@@ -39,27 +39,33 @@ export default function SBCEPage() {
       }, "-=0.5");
 
       // Vision & Mission Scroll Animations
-      gsap.from(".vision-card", {
-        x: -50,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".vision-card",
-          start: "top 80%",
+      gsap.fromTo(".vision-card", 
+        { x: -50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".vision-card",
+            start: "top 80%",
+          }
         }
-      });
+      );
 
-      gsap.from(".mission-card", {
-        x: 50,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".mission-card",
-          start: "top 80%",
+      gsap.fromTo(".mission-card",
+        { x: 50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".mission-card",
+            start: "top 80%",
+          }
         }
-      });
+      );
 
     }, containerRef);
 

@@ -32,28 +32,34 @@ export default function IEEEPage() {
       }, "-=0.6");
 
       // Mission Animation
-      gsap.from(".mission-section", {
-        x: -50,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".mission-section",
-          start: "top 80%",
+      gsap.fromTo(".mission-section", 
+        { x: -50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".mission-section",
+            start: "top 80%",
+          }
         }
-      });
+      );
 
       // Vision Animation
-      gsap.from(".vision-section", {
-        x: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".vision-section",
-          start: "top 80%",
+      gsap.fromTo(".vision-section", 
+        { x: 50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".vision-section",
+            start: "top 80%",
+          }
         }
-      });
+      );
 
     }, containerRef);
 
