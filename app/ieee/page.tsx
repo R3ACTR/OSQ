@@ -114,9 +114,9 @@ export default function IEEEPage() {
                     <Target size={32} />
                  </div>
                  
-                 <h2 className="text-4xl font-[family-name:var(--font-passero)] mb-6 text-zinc-900">OUR MISSION</h2>
+                 <h2 className="text-4xl font-[family-name:var(--font-passero)] mb-6 text-black">OUR MISSION</h2>
                  
-                 <div className="space-y-6 text-zinc-600 text-lg leading-relaxed">
+                 <div className="space-y-6 text-zinc-800 text-lg leading-relaxed">
                    <p>
                      We bring together students from diverse engineering and technology disciplines who share a common interest in exploring emerging technologies, strengthening technical skills, and developing solutions that create real-world impact.
                    </p>
@@ -128,7 +128,7 @@ export default function IEEEPage() {
             </div>
 
             {/* Vision Section */}
-            <div className="vision-section bg-zinc-900 text-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden group hover:shadow-[#00629B]/20 transition-all duration-500">
+            <div className="vision-section bg-black text-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden group hover:shadow-[#00629B]/20 transition-all duration-500">
                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-tr from-[#00629B]/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                
                <div className="relative z-10">
@@ -138,7 +138,7 @@ export default function IEEEPage() {
                  
                  <h2 className="text-4xl font-[family-name:var(--font-passero)] mb-6 text-white">OUR VISION</h2>
                  
-                 <div className="space-y-6 text-zinc-300 text-lg leading-relaxed">
+                 <div className="space-y-6 text-zinc-200 text-lg leading-relaxed">
                    <p>
                      Our vision is to inspire and empower students to excel in the fields of engineering, technology, and science while contributing meaningfully to society through innovative, ethical, and sustainable solutions.
                    </p>

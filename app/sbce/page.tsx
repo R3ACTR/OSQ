@@ -161,8 +161,8 @@ export default function SBCEPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </div>
-                <h2 className="text-4xl font-[family-name:var(--font-passero)] tracking-wider">OUR VISION</h2>
-                <p className="text-zinc-400 text-lg leading-relaxed">
+                <h2 className="text-4xl font-[family-name:var(--font-passero)] tracking-wider text-white">OUR VISION</h2>
+                <p className="text-zinc-300 text-lg leading-relaxed">
                   To create professionally competent engineers with human values and social commitment.
                 </p>
               </div>
@@ -177,8 +177,8 @@ export default function SBCEPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h2 className="text-4xl font-[family-name:var(--font-passero)] tracking-wider">OUR MISSION</h2>
-                <ul className="space-y-4 text-zinc-600 text-lg leading-relaxed">
+                <h2 className="text-4xl font-[family-name:var(--font-passero)] tracking-wider text-black">OUR MISSION</h2>
+                <ul className="space-y-4 text-zinc-800 text-lg leading-relaxed">
                   <li className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
                     <span>Offer well balanced curriculum with student-centric approach.</span>
