@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 import SmoothScroll from "./components/SmoothScroll";
 import Navbar from "./components/Navbar";
+import LoadingScreen from "./components/LoadingScreen";
 
 export default function RootLayout({
   children,
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${passero.variable} antialiased selection:bg-black selection:text-white`}
       >
+        <LoadingScreen />
         <SmoothScroll>
           <Navbar />
           {children}
