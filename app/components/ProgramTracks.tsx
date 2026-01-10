@@ -70,7 +70,7 @@ export default function ProgramTracks() {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           
           {/* Foundation Track */}
-          <div className="track-card bg-white border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] rounded-3xl p-8 md:p-10 relative group overflow-hidden">
+          <div className="track-card bg-white border-4 border-black rounded-3xl p-8 md:p-10 relative group overflow-hidden">
              
             <div className="flex items-center gap-4 mb-6">
               <span className="w-6 h-6 rounded-full bg-green-500 block"></span>
@@ -99,7 +99,7 @@ export default function ProgramTracks() {
           </div>
 
           {/* Advanced Track */}
-          <div className="track-card bg-white border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] rounded-3xl p-8 md:p-10 relative group overflow-hidden">
+          <div className="track-card bg-white border-4 border-black rounded-3xl p-8 md:p-10 relative group overflow-hidden">
 
             <div className="flex items-center gap-4 mb-6">
               <span className="w-6 h-6 rounded-full bg-blue-500 block"></span>
