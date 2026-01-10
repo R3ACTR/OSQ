@@ -6,6 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./components/About";
+import TimelineSection from "./components/TimelineSection";
 import MarqueeSection from "./components/MarqueeSection";
 import LeaderboardInfo from "./components/LeaderboardInfo";
 import Footer from "./components/Footer";
@@ -155,6 +156,8 @@ export default function Home() {
         </div>
 
         <About />
+        
+        <TimelineSection />
 
         <MarqueeSection />
 
