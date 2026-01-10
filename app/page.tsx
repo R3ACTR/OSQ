@@ -6,7 +6,10 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./components/About";
+import ProgramTracks from "./components/ProgramTracks";
+import EvaluationSection from "./components/EvaluationSection";
 import TimelineSection from "./components/TimelineSection";
+import LearnGithubSection from "./components/LearnGithubSection";
 import MarqueeSection from "./components/MarqueeSection";
 import LeaderboardInfo from "./components/LeaderboardInfo";
 import Footer from "./components/Footer";
@@ -156,12 +159,32 @@ export default function Home() {
         </div>
 
         <About />
+
+        <ProgramTracks />
+
+        <EvaluationSection />
+
+        {/* Separator */}
+        <div className="w-full bg-zinc-950 flex items-center justify-center py-4">
+           <div className="w-[80%] max-w-lg h-[2px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent relative">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#bfff00] rotate-45" />
+           </div>
+        </div>
         
         <TimelineSection />
 
         <MarqueeSection />
 
         <LeaderboardInfo />
+        
+        {/* Separator */}
+        <div className="w-full bg-white flex items-center justify-center py-4">
+           <div className="w-[80%] max-w-lg h-[2px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent relative">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#bfff00] rotate-45" />
+           </div>
+        </div>
+        
+        <LearnGithubSection />
       </main>
 
       <Footer />
