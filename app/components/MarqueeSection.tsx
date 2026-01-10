@@ -17,6 +17,7 @@ export default function MarqueeSection() {
         ease: "none",
         duration: 120,
         repeat: -1,
+        force3D: true,
       });
 
       // Marquee 2 (Moves Right)
@@ -27,6 +28,7 @@ export default function MarqueeSection() {
           ease: "none",
           duration: 120,
           repeat: -1,
+          force3D: true,
         }
       );
     });
@@ -41,7 +43,7 @@ export default function MarqueeSection() {
         <div className="flex overflow-hidden">
           <div
             ref={row1Ref}
-            className="flex flex-nowrap whitespace-nowrap"
+            className="flex flex-nowrap whitespace-nowrap will-change-transform [backface-visibility:hidden] transform-gpu"
           >
             {[...row1, ...row1, ...row1, ...row1].map((item, i) => (
               <span key={i} className="text-7xl md:text-9xl font-[family-name:var(--font-passero)] text-[#bfff00] mx-6 flex items-center gap-6">
@@ -57,7 +59,7 @@ export default function MarqueeSection() {
         <div className="flex overflow-hidden">
           <div
             ref={row2Ref}
-            className="flex flex-nowrap whitespace-nowrap"
+            className="flex flex-nowrap whitespace-nowrap will-change-transform [backface-visibility:hidden] transform-gpu"
           >
             {[...row2, ...row2, ...row2, ...row2].map((item, i) => (
               <span key={i} className="text-7xl md:text-9xl font-[family-name:var(--font-passero)] text-black mx-6 flex items-center gap-6">
