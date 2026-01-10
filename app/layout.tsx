@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description: "Join R3ACTR - The Open Source Community for aspiring developers and innovators.",
 };
 
-import SmoothScroll from "./components/SmoothScroll";
+
 import Navbar from "./components/Navbar";
 import LoadingScreen from "./components/LoadingScreen";
 
@@ -38,10 +38,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${passero.variable} antialiased selection:bg-black selection:text-white`}
       >
         <LoadingScreen />
-        <SmoothScroll>
           <Navbar />
           {children}
-        </SmoothScroll>
       </body>
     </html>
   );
