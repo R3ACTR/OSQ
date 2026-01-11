@@ -37,18 +37,7 @@ export default function SponsorPage() {
         ease: "back.out(1.7)",
       }, "-=0.4");
 
-      // Cards Animation
-      gsap.from(".benefit-card", {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".benefits-grid",
-          start: "top 80%",
-        }
-      });
+
 
     }, containerRef);
 
