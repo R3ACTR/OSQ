@@ -32,7 +32,7 @@ export default function Navbar() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(navRef.current, {
-        y: -100,
+        yPercent: -100,
         opacity: 0,
         duration: 0.8,
         ease: "power3.out",
@@ -67,8 +67,31 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 right-0 z-50"
+        className="fixed top-0 left-0 right-0 z-50 flex flex-col"
       >
+        <style jsx global>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 60s linear infinite;
+            display: inline-block;
+            white-space: nowrap;
+          }
+        `}</style>
+        
+        {/* Marquee Banner */}
+        <div className="bg-[#bfff00] w-full overflow-hidden border-b-2 border-black z-30">
+          <Link href="https://forms.gle/x4CLFSWL1FQMCBMK8" target="_blank" className="animate-marquee hover:underline decoration-black decoration-2">
+            {[...Array(10)].map((_, i) => (
+              <span key={i} className="text-black font-bold font-[family-name:var(--font-passero)] tracking-wider mx-8 text-sm md:text-base">
+                 VOLUNTEER REGISTRATION IS NOW OPEN  •  JOIN THE CORE TEAM  •  APPLY NOW  • 
+              </span>
+            ))}
+          </Link>
+        </div>
+
         <div
           className={`relative flex items-center justify-between px-6 md:px-12 w-full h-20 transition-all duration-500 ${
             isScrolled 
