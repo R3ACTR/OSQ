@@ -116,6 +116,7 @@ export default function Home() {
                  {[
                    { src: "/partners/sbce.png", alt: "SBCE", width: 80, href: "/sbce" },
                    { src: "/partners/ieee.png", alt: "IEEE", width: 100, href: "/ieee" },
+                   { src: "/partners/mulearn.png", alt: "Mulearn", width: 100 },
                    { src: "/partners/IEDC Logo-Photoroom.png", alt: "IEDC", width: 100 },
                    { src: "/partners/cse.png", alt: "CSE", width: 60 },
                    { src: "/partners/ai.png", alt: "AI", width: 60 },
