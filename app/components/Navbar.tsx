@@ -11,6 +11,7 @@ const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
   { name: "Leaderboard", href: "/leaderboard" },
+  { name: "Verify ID", href: "https://osq-id.r3actr.work/" },
 ];
 
 export default function Navbar() {
@@ -120,6 +121,8 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="relative px-6 py-2 group border border-zinc-200 rounded-full hover:border-black hover:shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300"
               >
                 <span className="relative z-10 text-lg font-[family-name:var(--font-passero)] tracking-wider text-zinc-600 transition-colors duration-300 group-hover:text-black">
@@ -155,8 +158,7 @@ export default function Navbar() {
           ref={mobileMenuRef}
           className="fixed inset-0 z-[60] bg-white/95 backdrop-blur-2xl md:hidden flex flex-col p-6"
         >
-          <div className="flex justify-between items-center mb-12">
-            <span className="font-mono font-bold text-xl tracking-tighter">R3ACTR</span>
+          <div className="flex justify-end items-center mb-12">
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="p-2 bg-zinc-100 rounded-full"
@@ -170,6 +172,8 @@ export default function Navbar() {
               <div key={link.name} className="mobile-link">
                 <Link
                   href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-4xl font-[family-name:var(--font-passero)] tracking-wider text-zinc-900 hover:pl-4 transition-all duration-300"
                 >
