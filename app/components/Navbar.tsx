@@ -84,10 +84,10 @@ export default function Navbar() {
         
         {/* Marquee Banner */}
         <div className="bg-[#bfff00] w-full overflow-hidden border-b-2 border-black z-30">
-          <Link href="https://forms.gle/x4CLFSWL1FQMCBMK8" target="_blank" className="animate-marquee hover:underline decoration-black decoration-2">
+          <Link href="https://forms.gle/h4Ln52ad4hr98gMdA" target="_blank" className="animate-marquee hover:underline decoration-black decoration-2">
             {[...Array(10)].map((_, i) => (
               <span key={i} className="text-black font-bold font-[family-name:var(--font-passero)] tracking-wider mx-8 text-sm md:text-base">
-                 VOLUNTEER REGISTRATION IS NOW OPEN  •  JOIN THE CORE TEAM  •  APPLY NOW  • 
+                 PARTICIPANT REGISTRATION IS NOW OPEN  •  JOIN THE EVENT  •  REGISTER NOW  • 
               </span>
             ))}
           </Link>
@@ -135,7 +135,8 @@ export default function Navbar() {
           {/* Right Actions */}
           <div className="flex items-center gap-3 z-20">
             <Link 
-              href="/register"
+              href="https://forms.gle/h4Ln52ad4hr98gMdA"
+              target="_blank"
               className="hidden md:flex items-center gap-2 bg-black text-white px-6 py-2 rounded-full font-[family-name:var(--font-passero)] text-lg tracking-wider transition-all duration-300 hover:bg-zinc-800 hover:shadow-[0_0_10px_rgba(0,0,0,0.1)]"
             >
               <span>REGISTER</span>

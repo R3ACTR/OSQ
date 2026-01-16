@@ -92,7 +92,8 @@ export default function Home() {
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
               <div className="hero-btn">
                 <Link 
-                  href="/register"
+                  href="https://forms.gle/h4Ln52ad4hr98gMdA"
+                  target="_blank"
                   className="inline-block px-12 py-4 bg-black text-white rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
                 >
                   REGISTER
