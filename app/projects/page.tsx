@@ -13,10 +13,9 @@ interface Project {
   id: string;
   title: string;
   description: string;
-  tags: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  image?: string;
+  tech: string[];
+  status: string;
+  link: string;
 }
 
 export default function ProjectsPage() {
@@ -25,7 +24,7 @@ export default function ProjectsPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch("/projects.json")
+    fetch("https://osq-projects-api.sreehari14shr.workers.dev/projects")
       .then((res) => res.json())
       .then((data) => {
         setProjects(data.projects || []);
@@ -58,26 +57,6 @@ export default function ProjectsPage() {
           delay: 0.3,
           ease: "back.out(1.7)",
         });
-      } else {
-        // Projects Grid Animation
-        gsap.fromTo(".project-card",
-          {
-            y: 50,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: ".projects-grid",
-              start: "top 80%",
-            },
-          }
-        );
-
       }
     }, containerRef);
 
@@ -148,14 +127,9 @@ export default function ProjectsPage() {
                         <Code2 size={32} />
                       </div>
                       <div className="flex gap-2">
-                         {project.githubUrl && (
-                             <a href={project.githubUrl} target="_blank" rel="noreferrer" className="p-2 text-zinc-500 bg-zinc-900/50 hover:bg-[#bfff00] hover:text-black rounded-full transition-all duration-300">
-                                 <Github size={20} />
-                             </a>
-                         )}
-                         {project.liveUrl && (
-                             <a href={project.liveUrl} target="_blank" rel="noreferrer" className="p-2 text-zinc-500 bg-zinc-900/50 hover:bg-[#bfff00] hover:text-black rounded-full transition-all duration-300">
-                                 <ExternalLink size={20} />
+                         {project.link && (
+                             <a href={project.link} target="_blank" rel="noreferrer" className="p-2 text-zinc-500 bg-zinc-900/50 hover:bg-[#bfff00] hover:text-black rounded-full transition-all duration-300">
+                                 {project.link.includes('github.com') ? <Github size={20} /> : <ExternalLink size={20} />}
                              </a>
                          )}
                       </div>
@@ -170,7 +144,7 @@ export default function ProjectsPage() {
                     </p>
 
                     <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-zinc-900/50">
-                      {project.tags.map((tag) => (
+                      {project.tech && project.tech.map((tag) => (
                         <span key={tag} className="px-4 py-1.5 bg-zinc-900 border border-zinc-800 text-xs font-bold rounded-full text-zinc-300 uppercase tracking-widest group-hover:border-[#bfff00]/50 group-hover:text-white transition-all duration-300">
                           {tag}
                         </span>
