@@ -11,6 +11,7 @@ const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
   { name: "Leaderboard", href: "/leaderboard" },
+  { name: "Participants", href: "/participants" },
   { name: "Verify ID", href: "https://osq-id.r3actr.work/" },
 ];
 
