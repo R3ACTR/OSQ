@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useTransition } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Linkedin, User, Search } from 'lucide-react';
+import { Github, Linkedin, User, Search, RefreshCw } from 'lucide-react';
+import { refreshParticipants } from '../participants/actions';
 
 interface Participant {
   UniqueTag?: string;
@@ -35,6 +36,13 @@ function getGithubUsername(url: string = ''): string | null {
 
 export default function ParticipantsList({ participants }: ParticipantsListProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isPending, startTransition] = useTransition();
+
+  const handleRefresh = () => {
+    startTransition(async () => {
+      await refreshParticipants();
+    });
+  };
 
   const filteredParticipants = useMemo(() => {
     if (!searchQuery.trim()) return participants;
@@ -63,6 +71,16 @@ export default function ParticipantsList({ participants }: ParticipantsListProps
                 <div className="px-6 py-3 bg-black text-white font-[family-name:var(--font-passero)] text-xl rounded-full border-2 border-[#bfff00] shrink-0">
                     TOTAL: {filteredParticipants.length}
                 </div>
+                
+                <button 
+                  onClick={handleRefresh}
+                  disabled={isPending}
+                  className="px-4 py-3 bg-white hover:bg-zinc-100 text-black border-2 border-black rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  title="Refresh List"
+                >
+                  <RefreshCw className={`w-5 h-5 ${isPending ? 'animate-spin' : ''}`} />
+                  <span className="font-bold hidden md:inline">REFRESH</span>
+                </button>
                 
                 <div className="relative w-full">
                     <div className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">

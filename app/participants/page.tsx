@@ -16,7 +16,7 @@ interface Participant {
 async function getParticipants(): Promise<Participant[]> {
   try {
     const res = await fetch('https://osq-config-api.sreehari14shr.workers.dev', {
-      next: { revalidate: 3600 } // Revalidate every hour
+      next: { revalidate: 3600, tags: ['participants'] } // Revalidate every hour or on demand
     });
     
     if (!res.ok) {
