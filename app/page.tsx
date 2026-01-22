@@ -6,12 +6,13 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./components/About";
-import ProgramTracks from "./components/ProgramTracks";
+
 import EvaluationSection from "./components/EvaluationSection";
 import TimelineSection from "./components/TimelineSection";
 import LearnGithubSection from "./components/LearnGithubSection";
 import MarqueeSection from "./components/MarqueeSection";
 import LeaderboardInfo from "./components/LeaderboardInfo";
+import JudgeSection from "./components/JudgeSection";
 import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -162,9 +163,14 @@ export default function Home() {
 
         <About />
 
-        <ProgramTracks />
+        <JudgeSection />
+
+
+
 
         <EvaluationSection />
+
+
 
         {/* Separator */}
         <div className="w-full bg-zinc-950 flex items-center justify-center py-4">
