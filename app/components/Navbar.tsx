@@ -30,18 +30,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Initial Entrance Animation
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(navRef.current, {
-        yPercent: -100,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+
 
   // Mobile Menu Animation
   useEffect(() => {
