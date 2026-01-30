@@ -78,8 +78,9 @@ export default function Home() {
 
       <main className="relative z-10 flex flex-col items-center w-full min-h-screen pt-32 md:pt-40">
         <div className="w-full px-4 flex flex-col items-center">
-            {/* Hero Logo */}
-            <div className="hero-logo flex items-center justify-center w-full max-w-xl aspect-video relative">
+
+
+            {/* Hero Logo */}<div className="hero-logo flex items-center justify-center w-full max-w-xl aspect-video relative">
               <Image
                 src="/osqb.svg"
                 alt="OSQB Logo"
@@ -90,7 +91,7 @@ export default function Home() {
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
               <div className="hero-btn">
                 <Link 
                   href="https://forms.gle/h4Ln52ad4hr98gMdA"
@@ -103,10 +104,10 @@ export default function Home() {
 
               <div className="hero-btn">
                 <Link 
-                  href="/sponsor"
+                  href="/sponsors"
                   className="inline-block px-12 py-4 bg-[#bfff00] text-black rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl border-4 border-black hover:scale-105 active:scale-95 transition-transform duration-200"
                 >
-                  SPONSOR
+                  SPONSORS
                 </Link>
               </div>
             </div>
@@ -116,9 +117,11 @@ export default function Home() {
               <span className="font-[family-name:var(--font-passero)] text-zinc-500 tracking-[0.3em] text-sm">PARTNERS</span>
               <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
                  {[
+                   { src: "/partners/keploy.png", alt: "Keploy", width: 400, href: "https://keploy.io" },
+                   { src: "/partners/THE HELPER.png", alt: "The Helper", width: 100, href:"https://thehelpers.vercel.app/" },
                    { src: "/partners/sbce.png", alt: "SBCE", width: 80, href: "/sbce" },
                    { src: "/partners/ieee.png", alt: "IEEE", width: 100, href: "/ieee" },
-                   { src: "/partners/mulearn.png", alt: "Mulearn", width: 100 },
+                   { src: "/partners/mulearn.png", alt: "Mulearn", width: 100, href: "https://mulearn.org/" },
                    { src: "/partners/IEDC Logo-Photoroom.png", alt: "IEDC", width: 100 },
                    { src: "/partners/cse.png", alt: "CSE", width: 60 },
                    { src: "/partners/ai.png", alt: "AI", width: 60 },
@@ -143,9 +146,11 @@ export default function Home() {
                      );
                    }
 
-                   return <div key={partner.alt}>{content}</div>;
+                  return <div key={partner.alt}>{content}</div>;
                  })}
               </div>
+
+
             </div>
         </div>
 
