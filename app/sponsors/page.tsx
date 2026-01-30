@@ -55,30 +55,7 @@ export default function SponsorPage() {
         ease: "power2.out",
       }, "-=0.4");
 
-      // Bottom Call to Action Animation
-      gsap.from(".cta-content", {
-        scrollTrigger: {
-          trigger: ".cta-section",
-          start: "top 70%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-      });
 
-      // Benefits Stagger
-      gsap.from(".benefit-card", {
-        scrollTrigger: {
-          trigger: ".benefits-grid",
-          start: "top 80%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power2.out",
-      });
 
     }, containerRef);
 
