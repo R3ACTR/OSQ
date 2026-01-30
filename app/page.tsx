@@ -117,6 +117,7 @@ export default function Home() {
               <span className="font-[family-name:var(--font-passero)] text-zinc-500 tracking-[0.3em] text-sm">PARTNERS</span>
               <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
                  {[
+                   { src: "/partners/osen.png", alt: "OSEN", width: 80 },
                    { src: "/partners/keploy.png", alt: "Keploy", width: 400, href: "https://keploy.io" },
                    { src: "/partners/THE HELPER.png", alt: "The Helper", width: 100, href:"https://thehelpers.vercel.app/" },
                    { src: "/partners/sbce.png", alt: "SBCE", width: 80, href: "/sbce" },

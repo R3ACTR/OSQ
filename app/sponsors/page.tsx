@@ -11,6 +11,10 @@ import Footer from "../components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const associateSponsors = [
+  { src: "/partners/osen.png", alt: "OSEN", width: 120 },
+];
+
 const swagSponsors = [
   { src: "/partners/keploy.png", alt: "Keploy", width: 400, href: "https://keploy.io" },
 ];
@@ -91,18 +95,28 @@ export default function SponsorPage() {
         backgroundSize: "32px 32px" 
       }} />
 
-      <main className="flex-grow pt-40 pb-20 relative z-10 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col items-center text-center space-y-24">
+      <main className="flex-grow pt-32 pb-20 relative z-10 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col items-center text-center space-y-12">
           
-          <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-passero)] text-zinc-900 tracking-wider mb-24">
+          <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-passero)] text-zinc-900 tracking-wider mb-8">
             FUEL OF THE REVOLUTION
           </h1>
 
+          {/* Associate Sponsor */}
+          <div className="w-full">
+            <h3 className="section-title text-3xl md:text-4xl font-[family-name:var(--font-passero)] mb-4 text-[#bfff00] tracking-wider drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ WebkitTextStroke: "1px black" }}>ASSOCIATE SPONSOR</h3>
+            <div className="flex flex-wrap justify-center items-center gap-12">
+              {associateSponsors.map((partner) => (
+                <SponsorItem key={partner.alt} partner={partner} size="large" />
+              ))}
+            </div>
+          </div>
+
           {/* Top Tier Sponsors Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
             {/* Swag Sponsor */}
             <div className="flex flex-col items-center">
-              <h3 className="section-title text-3xl md:text-4xl font-[family-name:var(--font-passero)] mb-12 text-[#bfff00] tracking-wider drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ WebkitTextStroke: "1px black" }}>SWAG SPONSOR</h3>
+              <h3 className="section-title text-3xl md:text-4xl font-[family-name:var(--font-passero)] mb-4 text-[#bfff00] tracking-wider drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ WebkitTextStroke: "1px black" }}>SWAG SPONSOR</h3>
               <div className="flex flex-wrap justify-center items-center gap-12">
                 {swagSponsors.map((partner) => (
                   <SponsorItem key={partner.alt} partner={partner} size="large" />
@@ -112,7 +126,7 @@ export default function SponsorPage() {
 
             {/* Community Sponsor */}
             <div className="flex flex-col items-center border-t md:border-t-0 md:border-l border-zinc-300 pt-12 md:pt-0 md:pl-12">
-              <h3 className="section-title text-3xl md:text-4xl font-[family-name:var(--font-passero)] mb-12 text-[#bfff00] tracking-wider drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ WebkitTextStroke: "1px black" }}>COMMUNITY SPONSOR</h3>
+              <h3 className="section-title text-3xl md:text-4xl font-[family-name:var(--font-passero)] mb-4 text-[#bfff00] tracking-wider drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ WebkitTextStroke: "1px black" }}>COMMUNITY SPONSOR</h3>
               <div className="flex flex-wrap justify-center items-center gap-12">
                 {communitySponsors.map((partner) => (
                   <SponsorItem key={partner.alt} partner={partner} size="medium" />
@@ -123,7 +137,7 @@ export default function SponsorPage() {
 
           {/* Partners */}
           <div className="w-full">
-            <h3 className="section-title text-3xl md:text-4xl font-[family-name:var(--font-passero)] mb-12 text-[#bfff00] tracking-wider drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ WebkitTextStroke: "1px black" }}>PARTNERS</h3>
+            <h3 className="section-title text-3xl md:text-4xl font-[family-name:var(--font-passero)] mb-4 text-[#bfff00] tracking-wider drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" style={{ WebkitTextStroke: "1px black" }}>PARTNERS</h3>
             <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-8 md:gap-16">
               {partners.map((partner) => (
                 <SponsorItem key={partner.alt} partner={partner} size="small" />
@@ -197,7 +211,7 @@ const SponsorItem = ({ partner, size = "medium" }: { partner: { src: string, alt
   if (size === "small") heightClass = "h-14 md:h-16";
 
   const content = (
-    <div className={`sponsor-item relative ${heightClass} w-auto flex items-center justify-center transition-transform hover:scale-110 duration-300 grayscale hover:grayscale-0 opacity-80 hover:opacity-100`}>
+    <div className={`sponsor-item relative ${heightClass} w-auto flex items-center justify-center transition-transform hover:scale-110 duration-300`}>
       <Image 
         src={partner.src} 
         alt={partner.alt} 

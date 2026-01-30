@@ -15,7 +15,7 @@ export default function TimelineSection() {
     { date: "14 JAN", title: "Contributor Reg Open", active: true },
     { date: "20 JAN", title: "Selected Contributors Get Email", active: false },
     { date: "31 JAN", title: "Repo Selection", active: false },
-    { date: "31 JAN", title: "Offline Git Class for SBCE Students", active: false },
+    { date: "2 Feb", title: "Offline Git Class for SBCE Students", active: false },
     { date: "1 FEB", title: "OSQ Begins", active: false },
     { date: "28 FEB", title: "OSQ Ends", active: false },
     { date: "5 MAR", title: "Winner Announcement", active: false },
