@@ -141,17 +141,7 @@ export default function RulesPage() {
         ease: "power4.out",
       });
 
-      // Rules Cards Animation
-      gsap.from(".rule-card", {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".rules-grid",
-          start: "top 80%",
-        }
-      });
+
 
 
       
