@@ -10,13 +10,11 @@ export default function TimelineSection() {
   const lineRef = useRef<HTMLDivElement>(null);
 
   const events = [
-    { date: "11 JAN", title: "Call for Volunteers", active: true },
-    { date: "13 JAN", title: "Website Goes Live", active: true },
-    { date: "14 JAN", title: "Contributor Reg Open", active: true },
-    { date: "20 JAN", title: "Selected Contributors Get Email", active: false },
-    { date: "31 JAN", title: "Repo Selection", active: false },
-    { date: "2 Feb", title: "Offline Git Class for SBCE Students", active: false },
-    { date: "1 FEB", title: "OSQ Begins", active: false },
+    { date: "1 Feb", title: "OSQ Kick Starts", active: true },
+    { date: "8 Feb", title: "1st Leaderboard Update", active: true },
+    { date: "15 Feb", title: "2nd Leaderboard Update", active: true },
+    { date: "15 Feb", title: "Last Date for Registration", active: true },
+    { date: "22 Feb", title: "3rd Leaderboard Update", active: true },
     { date: "28 FEB", title: "OSQ Ends", active: false },
     { date: "5 MAR", title: "Winner Announcement", active: false },
   ];

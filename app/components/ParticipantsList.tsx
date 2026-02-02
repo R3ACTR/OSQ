@@ -100,7 +100,7 @@ export default function ParticipantsList({ participants }: ParticipantsListProps
 
         {/* Participants List */}
         {filteredParticipants.length > 0 ? (
-          <div className="max-w-4xl mx-auto flex flex-col gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredParticipants.map((participant, index) => {
               const githubUsername = getGithubUsername(participant.GitHub);
               const avatarUrl = githubUsername ? `https://github.com/${githubUsername}.png` : null;
@@ -108,12 +108,10 @@ export default function ParticipantsList({ participants }: ParticipantsListProps
               return (
                 <div 
                     key={index} 
-                    className="group relative bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200"
+                    className="group relative bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 flex flex-col items-center text-center h-full"
                 >
-                    <div className="flex flex-col md:flex-row items-center gap-6">
-                    
                     {/* Avatar / Initials */}
-                    <div className="w-16 h-16 rounded-full bg-[#fae8ff] border-4 border-black flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-110 transition-transform duration-300 relative">
+                    <div className="w-24 h-24 mb-6 rounded-full bg-[#fae8ff] border-4 border-black flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-110 transition-transform duration-300 relative">
                          {avatarUrl ? (
                             <Image 
                                 src={avatarUrl}
@@ -123,29 +121,29 @@ export default function ParticipantsList({ participants }: ParticipantsListProps
                                 unoptimized
                             />
                          ) : (
-                            <span className="font-[family-name:var(--font-passero)] text-2xl">
+                            <span className="font-[family-name:var(--font-passero)] text-3xl">
                                 {participant.FullName ? participant.FullName.charAt(0).toUpperCase() : '?'}
                             </span>
                          )}
                     </div>
 
                     {/* Info */}
-                    <div className="flex-1 text-center md:text-left">
-                        <h3 className="text-xl font-bold uppercase tracking-tight">
+                    <div className="flex-1 w-full mb-6">
+                        <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tight break-words line-clamp-2 min-h-[3rem]">
                         {participant.FullName}
                         </h3>
-                        <div className="inline-block px-2 py-0.5 bg-zinc-100 text-xs font-bold uppercase tracking-widest mt-1 border border-zinc-200">
+                        <div className="inline-block px-3 py-1 bg-zinc-100 text-xs font-bold uppercase tracking-widest mt-2 border border-zinc-200 rounded-full">
                         Participant
                         </div>
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4 mt-auto">
                         {participant.GitHub && (
                         <Link 
                             href={participant.GitHub.startsWith('http') ? participant.GitHub : `https://${participant.GitHub}`} 
                             target="_blank"
-                            className="p-2 hover:bg-black hover:text-white border-2 border-transparent hover:border-black rounded-lg transition-all"
+                             className="p-3 bg-zinc-50 hover:bg-black hover:text-white border-2 border-zinc-200 hover:border-black rounded-xl transition-all"
                             title="GitHub"
                         >
                             <Github className="w-5 h-5" />
@@ -156,7 +154,7 @@ export default function ParticipantsList({ participants }: ParticipantsListProps
                         <Link 
                             href={participant.LinkedIn.startsWith('http') ? participant.LinkedIn : `https://${participant.LinkedIn}`} 
                             target="_blank"
-                            className="p-2 hover:bg-[#0077b5] hover:text-white border-2 border-transparent hover:border-black rounded-lg transition-all"
+                            className="p-3 bg-zinc-50 hover:bg-[#0077b5] hover:text-white border-2 border-zinc-200 hover:border-black rounded-xl transition-all"
                             title="LinkedIn"
                         >
                             <Linkedin className="w-5 h-5" />
@@ -164,12 +162,10 @@ export default function ParticipantsList({ participants }: ParticipantsListProps
                         )}
 
                         {!participant.GitHub && !participant.LinkedIn && (
-                            <div className="p-2 opacity-20 cursor-not-allowed">
+                            <div className="p-3 bg-zinc-50 opacity-20 cursor-not-allowed border-2 border-zinc-200 rounded-xl">
                                 <User className="w-5 h-5" />
                             </div>
                         )}
-                    </div>
-
                     </div>
                 </div>
               );

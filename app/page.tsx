@@ -110,6 +110,8 @@ export default function Home() {
                   SPONSORS
                 </Link>
               </div>
+
+
             </div>
 
             {/* Sponsor Section */}

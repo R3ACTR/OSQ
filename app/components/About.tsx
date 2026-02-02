@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -91,6 +92,16 @@ export default function About() {
           <p ref={addToRefs} className="opacity-0">
             by combining mentorship, structured tasks, and transparent progress tracking, open source quest aims to transform learners into confident, responsible open-source contributors while fostering a sustainable technical culture within the campus.
           </p>
+
+          <div ref={addToRefs as unknown as React.RefObject<HTMLDivElement>} className="opacity-0 pt-8 flex justify-center">
+            <Link 
+              href="https://drive.google.com/file/d/1cK5pgF0GcMyiPux4zmcYwvCq6ZLvgY3t/view?usp=sharing"
+              target="_blank"
+              className="inline-block px-12 py-4 bg-[#bfff00] text-black rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl border-4 border-black hover:scale-105 active:scale-95 transition-transform duration-200"
+            >
+              HOW TO CONTRIBUTE ?
+            </Link>
+          </div>
         </div>
       </div>
     </section>
