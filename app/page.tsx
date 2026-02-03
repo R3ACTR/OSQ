@@ -3,6 +3,8 @@
 import React, { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Lottie from "lottie-react";
+import discordAnimation from "@/public/icons/discord.json";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./components/About";
@@ -64,14 +66,14 @@ export default function Home() {
       {/* Floating Action Button */}
       <div className="fixed bottom-8 right-8 z-[100] animate-bounce-slow hover:animate-none">
         <Link 
-          href="/sbce" 
-          className="relative block w-16 h-16 md:w-20 md:h-20 bg-white rounded-full p-2 shadow-2xl border-4 border-black hover:scale-110 transition-transform duration-300 overflow-hidden"
+          href="https://discord.gg/EtBWjECQ4E" 
+          target="_blank"
+          className="relative block w-12 h-12 md:w-16 md:h-16 bg-white rounded-full p-2 shadow-2xl border-4 border-black hover:scale-110 transition-transform duration-300 overflow-hidden"
         >
-          <Image
-            src="/partners/sbce.png"
-            alt="SBCE"
-            fill
-            className="object-contain p-2"
+          <Lottie
+            animationData={discordAnimation}
+            loop={true}
+            className="w-full h-full"
           />
         </Link>
       </div>
