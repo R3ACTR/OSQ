@@ -8,6 +8,7 @@ import discordAnimation from "@/public/icons/discord.json";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./components/About";
+import ScoreCountdown from "./components/ScoreCountdown";
 
 import EvaluationSection from "./components/EvaluationSection";
 import TimelineSection from "./components/TimelineSection";
@@ -63,20 +64,7 @@ export default function Home() {
         backgroundSize: "24px 24px"
       }} />
 
-      {/* Floating Action Button */}
-      <div className="fixed bottom-8 right-8 z-[100] animate-bounce-slow hover:animate-none">
-        <Link 
-          href="https://discord.gg/EtBWjECQ4E" 
-          target="_blank"
-          className="relative block w-12 h-12 md:w-16 md:h-16 bg-white rounded-full p-2 shadow-2xl border-4 border-black hover:scale-110 transition-transform duration-300 overflow-hidden"
-        >
-          <Lottie
-            animationData={discordAnimation}
-            loop={true}
-            className="w-full h-full"
-          />
-        </Link>
-      </div>
+
 
       <main className="relative z-10 flex flex-col items-center w-full min-h-screen pt-32 md:pt-40">
         <div className="w-full px-4 flex flex-col items-center">
@@ -93,6 +81,7 @@ export default function Home() {
             </div>
 
             {/* Action Buttons */}
+            <ScoreCountdown />
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
               <div className="hero-btn">
                 <Link 
