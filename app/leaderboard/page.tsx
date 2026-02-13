@@ -3,10 +3,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Trophy, Medal, Crown, Star, GitPullRequest, GitCommit, MessageSquare, Github, Linkedin, Link as LinkIcon, RotateCw, Download } from "lucide-react";
+import { Trophy, Medal, Crown, Star, GitPullRequest, GitCommit, MessageSquare, Github, Linkedin, Link as LinkIcon, RotateCw, Download, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useValentineEvent } from "../hooks/useValentineEvent";
 
 interface Contributor {
   id: string; // Unique identifier
@@ -23,6 +24,7 @@ interface Contributor {
 }
 
 export default function LeaderboardPage() {
+  const { isEventActive, timeRemaining, nextEventLabel } = useValentineEvent();
   const [leaderboard, setLeaderboard] = useState<Contributor[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -55,11 +57,16 @@ export default function LeaderboardPage() {
         // Generate a unique ID
         const uniqueId = user.UniqueTag || user.Email || user.GitHub || `${user.FullName}-${index}`;
 
+        let points = getValue(user, "score") || 0;
+        if (isEventActive) {
+          points *= 2;
+        }
+
         return {
           id: uniqueId,
           rank: index + 1,
           username: user.FullName || "Anonymous",
-          points: getValue(user, "score") || 0,
+          points,
           avatar: avatarUrl,
           badges: [], // API doesn't provide badges yet
           prs: Number(getValue(user, "prs")) || 0,
@@ -80,7 +87,7 @@ export default function LeaderboardPage() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [isEventActive]);
 
   const handleRefresh = () => {
     fetchData();
@@ -180,7 +187,7 @@ export default function LeaderboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 flex flex-col relative">
+    <div className={`min-h-screen flex flex-col relative transition-colors duration-500 ${isEventActive ? 'bg-pink-50' : 'bg-zinc-50'}`}>
       <Navbar />
       
       {/* Background Pattern */}
@@ -198,7 +205,7 @@ export default function LeaderboardPage() {
             className="page-header text-center mb-28 space-y-4"
           >
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-[family-name:var(--font-passero)] tracking-wider px-2">
-              HALL OF <span className="text-[#bfff00] drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] text-stroke-black" style={{ WebkitTextStroke: "1px black" }}>FAME</span>
+              HALL OF <span className={`drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] text-stroke-black transition-colors duration-500 ${isEventActive ? 'text-pink-500' : 'text-[#bfff00]'}`} style={{ WebkitTextStroke: "1px black" }}>FAME</span>
             </h1>
             
             <div className="flex flex-wrap justify-center gap-4 mt-6">
@@ -322,17 +329,17 @@ export default function LeaderboardPage() {
                       <div className="w-full max-w-[320px] md:max-w-none bg-black text-white rounded-2xl md:rounded-t-2xl md:rounded-b-none p-8 text-center h-auto md:h-[280px] flex flex-col justify-between border-t-4 border-[#bfff00] shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden group">
                          <div className="relative z-10 w-full flex flex-col items-center h-full justify-between gap-4 md:gap-0">
                            <div>
-                              <h3 className="text-3xl font-[family-name:var(--font-passero)] tracking-wide text-[#bfff00] truncate max-w-[220px]">{leaderboard[0].username}</h3>
+                              <h3 className={`text-3xl font-[family-name:var(--font-passero)] tracking-wide truncate max-w-[220px] ${isEventActive ? 'text-pink-500' : 'text-[#bfff00]'}`}>{leaderboard[0].username}</h3>
                               <p className="text-white font-mono mt-2 text-xl font-bold mb-3">{leaderboard[0].points.toLocaleString()} PTS</p>
                               <div className="flex justify-center gap-3 text-sm text-zinc-300 mb-2">
-                                <div className="flex items-center gap-1 text-[#bfff00]" title="Pull Requests"><GitPullRequest size={14}/> {leaderboard[0].prs ?? 0}</div>
-                                <div className="flex items-center gap-1 text-[#bfff00]" title="Commits"><GitCommit size={14}/> {leaderboard[0].commits ?? 0}</div>
+                                <div className={`flex items-center gap-1 ${isEventActive ? 'text-pink-500' : 'text-[#bfff00]'}`} title="Pull Requests"><GitPullRequest size={14}/> {leaderboard[0].prs ?? 0}</div>
+                                <div className={`flex items-center gap-1 ${isEventActive ? 'text-pink-500' : 'text-[#bfff00]'}`} title="Commits"><GitCommit size={14}/> {leaderboard[0].commits ?? 0}</div>
                               </div>
                            </div>
 
                            <div className="flex justify-center gap-3 mt-auto">
                             {leaderboard[0].github && leaderboard[0].github !== "Nil" && (
-                              <Link href={leaderboard[0].github} target="_blank" className="p-2 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-[#bfff00] hover:text-black hover:border-black hover:scale-110 transition-all text-white">
+                              <Link href={leaderboard[0].github} target="_blank" className={`p-2 bg-zinc-900 border border-zinc-800 rounded-full hover:text-black hover:border-black hover:scale-110 transition-all text-white ${isEventActive ? 'hover:bg-pink-500' : 'hover:bg-[#bfff00]'}`}>
                                 <Github size={20} />
                               </Link>
                             )}
@@ -405,7 +412,7 @@ export default function LeaderboardPage() {
                       <div className="font-mono text-zinc-400 font-bold w-8 text-center text-lg shrink-0">{user.rank}</div>
                       
                       <div className="flex items-center gap-4 overflow-hidden">
-                        <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full bg-zinc-100 overflow-hidden border border-zinc-200 group-hover:border-[#bfff00] transition-colors shrink-0">
+                        <div className={`relative w-10 h-10 md:w-12 md:h-12 rounded-full bg-zinc-100 overflow-hidden border border-zinc-200 transition-colors shrink-0 ${isEventActive ? 'group-hover:border-pink-500' : 'group-hover:border-[#bfff00]'}`}>
                            <Image src={user.avatar} alt={user.username} fill className="object-cover" />
                         </div>
                         <div className="min-w-0">
