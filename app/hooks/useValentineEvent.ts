@@ -26,13 +26,13 @@ export const useValentineEvent = () => {
         setTimeRemaining(formatTime(diff));
       } else if (now < start) {
         setIsEventActive(false);
-        setNextEventLabel('NEXT EVENT');
+        setNextEventLabel('HEARTSCRIPT');
         const diff = start.getTime() - now.getTime();
         setTimeRemaining(formatTime(diff));
       } else {
         // Event passed for this year
         setIsEventActive(false);
-        setNextEventLabel('NEXT EVENT');
+        setNextEventLabel('HEARTSCRIPT');
         // Calculate time to next year's event
         const nextYearStart = new Date(currentYear + 1, 1, 14, 0, 0, 0);
         const diff = nextYearStart.getTime() - now.getTime();

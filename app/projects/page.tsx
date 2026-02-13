@@ -116,49 +116,52 @@ export default function ProjectsPage() {
           ) : (
             /* Projects Grid */
             <div className="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <div 
-                  key={project.id} 
-                  className="project-card group relative bg-black border border-[#bfff00]/20 rounded-[2rem] overflow-hidden hover:border-[#bfff00] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(191,255,0,0.2)]"
-                >
-                  <div className="p-8 flex flex-col h-full relative z-10">
-                    <div className="mb-8 flex justify-between items-start">
-                      <div className="p-3 bg-zinc-900/80 rounded-2xl border border-zinc-800 text-[#bfff00] group-hover:bg-[#bfff00] group-hover:text-black transition-all duration-300">
-                        <Code2 size={32} />
+              {projects.map((project) => {
+                const isHeartScript = project.title.toLowerCase().includes("heartscript");
+                return (
+                  <div 
+                    key={project.id} 
+                    className={`project-card group relative bg-black border rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] ${isHeartScript ? 'border-pink-500/30 hover:border-pink-500 hover:shadow-pink-500/20' : 'border-[#bfff00]/20 hover:border-[#bfff00] hover:shadow-[#bfff00]/20'}`}
+                  >
+                    <div className="p-8 flex flex-col h-full relative z-10">
+                      <div className="mb-8 flex justify-between items-start">
+                        <div className={`p-3 bg-zinc-900/80 rounded-2xl border border-zinc-800 transition-all duration-300 ${isHeartScript ? 'text-pink-500 group-hover:bg-pink-500 group-hover:text-white' : 'text-[#bfff00] group-hover:bg-[#bfff00] group-hover:text-black'}`}>
+                          <Code2 size={32} />
+                        </div>
+                        <div className="flex gap-2">
+                          {project.link && (
+                            <a href={project.link} target="_blank" rel="noreferrer" className={`p-2 text-zinc-500 bg-zinc-900/50 rounded-full transition-all duration-300 ${isHeartScript ? 'hover:bg-pink-500 hover:text-white' : 'hover:bg-[#bfff00] hover:text-black'}`}>
+                              {project.link.includes('github.com') ? <Github size={20} /> : <ExternalLink size={20} />}
+                            </a>
+                          )}
+                        </div>
                       </div>
-                      <div className="flex gap-2">
-                         {project.link && (
-                             <a href={project.link} target="_blank" rel="noreferrer" className="p-2 text-zinc-500 bg-zinc-900/50 hover:bg-[#bfff00] hover:text-black rounded-full transition-all duration-300">
-                                 {project.link.includes('github.com') ? <Github size={20} /> : <ExternalLink size={20} />}
-                             </a>
-                         )}
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-3xl font-[family-name:var(--font-passero)] mb-4 text-[#bfff00] tracking-wide drop-shadow-sm">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="text-zinc-400 mb-8 line-clamp-3 flex-grow leading-relaxed font-light text-base">
-                      {project.description}
-                    </p>
+                      
+                      <h3 className={`text-3xl font-[family-name:var(--font-passero)] mb-4 tracking-wide drop-shadow-sm ${isHeartScript ? 'text-pink-500' : 'text-[#bfff00]'}`}>
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-zinc-400 mb-8 line-clamp-3 flex-grow leading-relaxed font-light text-base">
+                        {project.description}
+                      </p>
 
-                    <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-zinc-900/50">
-                      {project.tech && project.tech.map((tag) => (
-                        <span key={tag} className="px-4 py-1.5 bg-zinc-900 border border-zinc-800 text-xs font-bold rounded-full text-zinc-300 uppercase tracking-widest group-hover:border-[#bfff00]/50 group-hover:text-white transition-all duration-300">
-                          {tag}
-                        </span>
-                      ))}
+                      <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-zinc-900/50">
+                        {project.tech && project.tech.map((tag) => (
+                          <span key={tag} className={`px-4 py-1.5 bg-zinc-900 border border-zinc-800 text-xs font-bold rounded-full text-zinc-300 uppercase tracking-widest transition-all duration-300 ${isHeartScript ? 'group-hover:border-pink-500/50 group-hover:text-pink-100' : 'group-hover:border-[#bfff00]/50 group-hover:text-white'}`}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
+                    
+                    {/* Subtle Grain/Texture Overlay */}
+                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
+                    
+                    {/* Hover Highlight */}
+                    <div className={`absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-all duration-500 ${isHeartScript ? 'bg-pink-500/10 group-hover:bg-pink-500/20' : 'bg-[#bfff00]/5 group-hover:bg-[#bfff00]/10'}`} />
                   </div>
-                  
-                  {/* Subtle Grain/Texture Overlay */}
-                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
-                  
-                  {/* Hover Highlight */}
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#bfff00]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-[#bfff00]/10 transition-all duration-500" />
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
