@@ -57,10 +57,7 @@ export default function LeaderboardPage() {
         // Generate a unique ID
         const uniqueId = user.UniqueTag || user.Email || user.GitHub || `${user.FullName}-${index}`;
 
-        let points = getValue(user, "score") || 0;
-        if (isEventActive) {
-          points *= 2;
-        }
+        const points = getValue(user, "score") || 0;
 
         return {
           id: uniqueId,
