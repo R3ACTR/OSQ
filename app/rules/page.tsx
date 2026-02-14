@@ -221,14 +221,16 @@ export default function RulesPage() {
         {/* CTA */}
         <div className="text-center py-12">
           <Link 
-            href="https://forms.gle/h4Ln52ad4hr98gMdA"
-            target="_blank"
+            href="/register"
             className="inline-block px-12 py-5 bg-[#bfff00] text-black rounded-full font-[family-name:var(--font-passero)] text-2xl md:text-3xl tracking-wider shadow-2xl border-4 border-black hover:scale-105 active:scale-95 transition-transform duration-200"
           >
-            REGISTER NOW
+            VIEW TITLES
           </Link>
-          <p className="mt-6 text-zinc-400 font-mono text-sm">Don't miss the chance to start your quest.</p>
+          <p className="mt-6 text-zinc-400 font-mono text-sm">Check out the exclusive titles awarded to contributors.</p>
         </div>
+
+        {/* CTA */}
+
 
       </main>
 

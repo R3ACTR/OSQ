@@ -6,21 +6,6 @@
     "github": "sreehari",
     "avatar": "https://github.com/Sree14hari.png",
     "joinDate": "Jan 2024"
-  },
-  {
-    "tag": "OSQ-002",
-    "name": "Jane Doe",
-    "role": "Core Contributor",
-    "github": "janedoe",
-    "avatar": "https://github.com/janedoe.png",
-    "joinDate": "Feb 2024"
-  },
-  {
-    "tag": "OSQ-003",
-    "name": "John Smith",
-    "role": "Community Member",
-    "github": "johnsmith",
-    "avatar": "https://github.com/johnsmith.png",
-    "joinDate": "Mar 2024"
   }
+ 
 ]

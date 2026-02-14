@@ -74,13 +74,13 @@ export default function Navbar() {
         
         {/* Marquee Banner */}
         <div className="bg-[#bfff00] w-full overflow-hidden border-b-2 border-black z-30">
-          <Link href="https://forms.gle/h4Ln52ad4hr98gMdA" target="_blank" className="animate-marquee hover:underline decoration-black decoration-2">
+          <div className="animate-marquee">
             {[...Array(10)].map((_, i) => (
               <span key={i} className="text-black font-bold font-[family-name:var(--font-passero)] tracking-wider mx-8 text-sm md:text-base">
-                 PARTICIPANT REGISTRATION IS NOW OPEN  •  JOIN THE EVENT  •  REGISTER NOW  • 
+                 REGISTRATIONS ARE NOW CLOSED  •  CHECK OUT THE LEADERBOARD  •  CONTRIBUTIONS ARE OPEN  • 
               </span>
             ))}
-          </Link>
+          </div>
         </div>
 
         <div
@@ -124,14 +124,7 @@ export default function Navbar() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-3 z-20">
-            <Link 
-              href="https://forms.gle/h4Ln52ad4hr98gMdA"
-              target="_blank"
-              className="hidden md:flex items-center gap-2 bg-black text-white px-6 py-2 rounded-full font-[family-name:var(--font-passero)] text-lg tracking-wider transition-all duration-300 hover:bg-zinc-800 hover:shadow-[0_0_10px_rgba(0,0,0,0.1)]"
-            >
-              <span>REGISTER</span>
-              <ArrowRight size={18} />
-            </Link>
+
 
             <button
               className="md:hidden p-2 text-zinc-800"
