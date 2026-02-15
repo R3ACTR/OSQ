@@ -85,7 +85,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
               <div className="hero-btn">
                 <Link 
-                  href="/register"
+                  href="/title"
                   className="inline-block w-64 text-center py-4 bg-black text-white rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl border-4 border-transparent hover:scale-105 active:scale-95 transition-transform duration-200"
                 >
                   TITLES

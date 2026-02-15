@@ -221,7 +221,7 @@ export default function RulesPage() {
         {/* CTA */}
         <div className="text-center py-12">
           <Link 
-            href="/register"
+            href="/title"
             className="inline-block px-12 py-5 bg-[#bfff00] text-black rounded-full font-[family-name:var(--font-passero)] text-2xl md:text-3xl tracking-wider shadow-2xl border-4 border-black hover:scale-105 active:scale-95 transition-transform duration-200"
           >
             VIEW TITLES
