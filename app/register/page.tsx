@@ -131,7 +131,7 @@ export default function ExclusiveTitlesPage() {
                   {user.titleImage && (
                     <div className="relative w-full h-32 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-2">
                        <div className={`relative w-full h-full ${
-                         user.titleImage.includes("dedication.png") ? "scale-100 md:scale-[1.8]" : "scale-100"
+                         "scale-100 md:scale-100"
                        }`}>
                          <Image 
                            src={user.titleImage} 

@@ -86,7 +86,7 @@ export default function Home() {
               <div className="hero-btn">
                 <Link 
                   href="/register"
-                  className="inline-block px-12 py-4 bg-black text-white rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
+                  className="inline-block w-64 text-center py-4 bg-black text-white rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl border-4 border-transparent hover:scale-105 active:scale-95 transition-transform duration-200"
                 >
                   TITLES
                 </Link>
@@ -95,7 +95,7 @@ export default function Home() {
               <div className="hero-btn">
                 <Link 
                   href="/sponsors"
-                  className="inline-block px-12 py-4 bg-[#bfff00] text-black rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl border-4 border-black hover:scale-105 active:scale-95 transition-transform duration-200"
+                  className="inline-block w-64 text-center py-4 bg-[#bfff00] text-black rounded-full font-[family-name:var(--font-passero)] text-2xl tracking-wider shadow-xl border-4 border-black hover:scale-105 active:scale-95 transition-transform duration-200"
                 >
                   SPONSORS
                 </Link>

@@ -8,36 +8,26 @@ export const useValentineEvent = () => {
   useEffect(() => {
     const checkTime = () => {
       const now = new Date();
-      const currentYear = now.getFullYear();
       
-      // Event start: Feb 14 00:00:00 (Local Time)
-      const start = new Date(currentYear, 1, 14, 0, 0, 0); 
-      // Event end: Feb 15 00:00:00 (Local Time)
-      const end = new Date(currentYear, 1, 15, 0, 0, 0);
+      // Calculate next Saturday
+      const nextSaturday = new Date(now);
+      const dayOfWeek = now.getDay();
+      const daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
+      
+      // If today is Saturday, we want the next Saturday (7 days later), 
+      // unless we want to show it as active on current Saturday?
+      // Assuming "next boost" implies future countdown.
+      const daysToAdd = daysUntilSaturday === 0 ? 7 : daysUntilSaturday;
+      
+      nextSaturday.setDate(now.getDate() + daysToAdd);
+      nextSaturday.setHours(0, 0, 0, 0); // Midnight start of Saturday
 
-      // For testing purposes, if we are past the event in the current year, check next year? 
-      // User prompt says "14th feb 12 am to 15th feb 12 am". Assuming current upcoming Feb 14.
-      // Current date is 2026-02-13. So upcoming is 2026-02-14.
-
-      if (now >= start && now < end) {
-        setIsEventActive(true);
-        setNextEventLabel('EVENT ENDS IN');
-        const diff = end.getTime() - now.getTime();
-        setTimeRemaining(formatTime(diff));
-      } else if (now < start) {
-        setIsEventActive(false);
-        setNextEventLabel('HEARTSCRIPT');
-        const diff = start.getTime() - now.getTime();
-        setTimeRemaining(formatTime(diff));
-      } else {
-        // Event passed for this year
-        setIsEventActive(false);
-        setNextEventLabel('HEARTSCRIPT');
-        // Calculate time to next year's event
-        const nextYearStart = new Date(currentYear + 1, 1, 14, 0, 0, 0);
-        const diff = nextYearStart.getTime() - now.getTime();
-        setTimeRemaining(formatTime(diff));
-      }
+      // For now, we'll keep it as a countdown to the start of the boost
+      setIsEventActive(false);
+      setNextEventLabel('NEXT BOOST');
+      
+      const diff = nextSaturday.getTime() - now.getTime();
+      setTimeRemaining(formatTime(diff));
     };
 
     const formatTime = (ms: number) => {
