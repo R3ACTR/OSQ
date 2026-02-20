@@ -9,28 +9,28 @@ export const useValentineEvent = () => {
     const checkTime = () => {
       const now = new Date();
       
-      // Calculate next Saturday
-      const nextSaturday = new Date(now);
-      const dayOfWeek = now.getDay();
-      const daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
-      
-      // If today is Saturday, we want the next Saturday (7 days later), 
-      // unless we want to show it as active on current Saturday?
-      // Assuming "next boost" implies future countdown.
-      const daysToAdd = daysUntilSaturday === 0 ? 7 : daysUntilSaturday;
-      
-      nextSaturday.setDate(now.getDate() + daysToAdd);
-      nextSaturday.setHours(0, 0, 0, 0); // Midnight start of Saturday
+      const eventStart = new Date('2026-02-21T00:00:00+05:30');
+      const eventEnd = new Date('2026-02-22T23:59:59+05:30');
 
-      // For now, we'll keep it as a countdown to the start of the boost
-      setIsEventActive(false);
-      setNextEventLabel('NEXT BOOST');
-      
-      const diff = nextSaturday.getTime() - now.getTime();
-      setTimeRemaining(formatTime(diff));
+      if (now >= eventStart && now <= eventEnd) {
+        setIsEventActive(true);
+        setNextEventLabel('EPOQ 2X BOOST ENDS IN');
+        const diff = eventEnd.getTime() - now.getTime();
+        setTimeRemaining(formatTime(diff));
+      } else if (now < eventStart) {
+        setIsEventActive(false);
+        setNextEventLabel('EPOQ 2X BOOST');
+        const diff = eventStart.getTime() - now.getTime();
+        setTimeRemaining(formatTime(diff));
+      } else {
+        setIsEventActive(false);
+        setNextEventLabel('EVENT ENDED');
+        setTimeRemaining('0d : 00h : 00m : 00s');
+      }
     };
 
     const formatTime = (ms: number) => {
+      if (ms < 0) return '0d : 00h : 00m : 00s';
       const days = Math.floor(ms / (1000 * 60 * 60 * 24));
       const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
