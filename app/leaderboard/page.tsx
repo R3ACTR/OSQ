@@ -40,10 +40,20 @@ export default function LeaderboardPage() {
          return foundKey ? obj[foundKey] : undefined;
       });
 
-      // Filter participants and sort by score descending
-      const sortedData = data
-        .filter((user: any) => user.Role === "participants" && (getValue(user, "score") || 0) > 0)
-        .sort((a: any, b: any) => (getValue(b, "score") || 0) - (getValue(a, "score") || 0));
+      // Process data to include sponsor score
+      const processedData = data.map((user: any) => {
+        const baseScore = Number(getValue(user, "score")) || 0;
+        const sponsorScore = Number(getValue(user, "sponsor_score") || getValue(user, "sponsorscore")) || 0;
+        return {
+          ...user,
+          totalScore: baseScore + sponsorScore
+        };
+      });
+
+      // Filter participants and sort by total score descending
+      const sortedData = processedData
+        .filter((user: any) => user.Role === "participants" && user.totalScore > 0)
+        .sort((a: any, b: any) => b.totalScore - a.totalScore);
 
       const formattedLeaderboard = sortedData.map((user: any, index: number) => {
         let avatarUrl = user.AvatarUrl;
@@ -57,7 +67,7 @@ export default function LeaderboardPage() {
         // Generate a unique ID
         const uniqueId = user.UniqueTag || user.Email || user.GitHub || `${user.FullName}-${index}`;
 
-        const points = getValue(user, "score") || 0;
+        const points = user.totalScore;
 
         return {
           id: uniqueId,
