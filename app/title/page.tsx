@@ -17,8 +17,8 @@ const verifiedUsers = [
     "github": "darkdevil3610",
     "linkedin": "gourav-suresh",
     "avatar": "https://github.com/darkdevil3610.png",
-    "titleImage": "/Title/heartscriptcupid.png",
-    "certificate":"https://drive.google.com/file/d/1LRx850rMHlHDrPtwI05u5s0ObAGElJjI/view?usp=sharing"
+    "titleImage": "/Title/heartscriptcupid.png"
+  
   },
   {
   
@@ -27,9 +27,20 @@ const verifiedUsers = [
     "github": "135790-diya",
     "avatar": "https://github.com/135790-diya.png",
     "linkedin": "diya-thresia-daniel",
-    "titleImage": "/Title/dedication.png",
-    "certificate":"https://drive.google.com/file/d/1d-ZYQ0gCQzkovu0Sa07w4p_RXv7CnugW/view"
+    "titleImage": "/Title/dedication.png"
+
   },
+  {
+  
+    "name": "Azmil Mohammed K S",
+    "role": "Participant",
+    "github": "azmil666",
+    "avatar": "https://github.com/azmil666.png",
+    "linkedin": "azmil-mohammed-6a0768332",
+    "titleImage": "/Title/pixelacrhetect.png"
+  
+  }
+ 
  
 ];
 
@@ -102,11 +113,11 @@ export default function ExclusiveTitlesPage() {
              Honoring our verified contributors who have made exceptional contributions to the Open Source Quest.
            </p>
 
-           <div className="flex flex-wrap justify-center gap-20 w-full">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
              {verifiedUsers.map((user, index) => (
                <div 
                  key={index}
-                 className="profile-item flex flex-col items-center text-center gap-6 group w-full md:w-[350px]"
+                 className="profile-item flex flex-col items-center text-center gap-6 group w-full"
                >
                   {/* Avatar */}
                   <div className="relative w-32 h-32 rounded-3xl border-4 border-black overflow-hidden bg-zinc-100 transition-transform duration-300 group-hover:scale-105">
@@ -163,17 +174,7 @@ export default function ExclusiveTitlesPage() {
                         <Linkedin size={20} />
                       </Link>
                     )}
-                    {user.certificate && (
-                      <Link 
-                         href={user.certificate}
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         className="p-3 bg-green-600 text-white rounded-full hover:bg-black hover:text-white transition-all duration-300 hover:scale-110 shadow-md"
-                         title="Download Certificate"
-                      >
-                        <Download size={20} />
-                      </Link>
-                    )}
+                   
                   </div>
                </div>
              ))}
