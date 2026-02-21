@@ -7,6 +7,7 @@ import Lottie from "lottie-react";
 import discordAnimation from "@/public/icons/discord.json";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Trophy } from "lucide-react";
 import About from "./components/About";
 import ScoreCountdown from "./components/ScoreCountdown";
 
@@ -194,6 +195,15 @@ export default function Home() {
       </main>
 
       <Footer />
+      
+      {/* Floating Prizes Icon */}
+      <Link 
+        href="/prizes"
+        className="fixed bottom-8 right-8 md:bottom-10 md:right-10 z-[100] p-4 bg-[#bfff00] rounded-full shadow-2xl border-4 border-black hover:scale-110 active:scale-95 transition-transform duration-300 flex items-center justify-center group"
+        title="View Prizes"
+      >
+        <Trophy size={32} className="text-black group-hover:animate-bounce" />
+      </Link>
     </div>
   );
 }
